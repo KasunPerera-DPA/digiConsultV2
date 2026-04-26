@@ -5,6 +5,8 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://kasunperera-dpa.github.io",
+  base: "digiConsultV2", // Add this line! No slashes here.
   integrations: [icon()],
   vite: {
     plugins: [tailwindcss()],
