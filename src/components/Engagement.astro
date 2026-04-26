@@ -1,0 +1,92 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const supportList = [
+  "Accounting & Audit Firms",
+  "CFO's & Finance Professionals",
+  "Financial Services Companies",
+  "SMEs & Growing Businesses",
+  "Startups Scaling Operations",
+  "Professional Service Firms",
+  "Lawyers & Legal Organizations",
+  "IT & Support Service Companies"
+];
+
+const models = [
+  {
+    title: "Dedicated Resource Model",
+    description: "Full-time or part-time professionals.",
+    icon: "mdi:account-tie",
+    color: "text-blue-600",
+    border: "border-blue-600"
+  },
+  {
+    title: "Project-Based Delivery",
+    description: "Defined scope and timelines.",
+    icon: "mdi:clipboard-text-outline",
+    color: "text-green-600",
+    border: "border-green-600"
+  },
+  {
+    title: "Hybrid Model",
+    description: "Combination of ongoing support and project work.",
+    icon: "mdi:account-group-outline",
+    color: "text-brand-orange",
+    border: "border-brand-orange"
+  }
+];
+---
+
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+      
+      <div class="bg-brand-gray-light rounded-3xl p-10 lg:p-14 shadow-sm border border-brand-gray-light hover:shadow-md transition-shadow">
+        <h2 class="text-brand-blue text-2xl lg:text-3xl font-bold uppercase tracking-tight mb-2">
+          WE Support
+        </h2>
+        <div class="w-12 h-1 bg-brand-orange mb-10 rounded-full"></div>
+        
+        <ul class="space-y-4">
+          {supportList.map((item) => (
+            <li class="flex items-center gap-4 text-brand-blue font-medium group">
+              <div class="flex-shrink-0 w-6 h-6 bg-brand-blue text-white rounded-full flex items-center justify-center group-hover:bg-brand-orange transition-colors">
+                <Icon name="mdi:check" class="w-4 h-4" />
+              </div>
+              <span class="text-brand-gray-medium group-hover:text-brand-blue transition-colors">
+                {item}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-3xl p-10 lg:p-14 shadow-sm border border-brand-gray-light hover:shadow-md transition-shadow">
+        <h2 class="text-brand-blue text-2xl lg:text-3xl font-bold uppercase tracking-tight mb-2">
+          ENGAGEMENT Models
+        </h2>
+        <div class="w-12 h-1 bg-brand-orange mb-12 rounded-full"></div>
+
+        <div class="space-y-10">
+          {models.map((model) => (
+            <div class="flex gap-6 group">
+              <div class={`flex-shrink-0 w-16 h-16 rounded-full border-2 ${model.border} flex items-center justify-center ${model.color} group-hover:bg-brand-gray-light transition-all`}>
+                <Icon name={model.icon} class="w-8 h-8" />
+              </div>
+              <div class="flex flex-col justify-center">
+                <h3 class="text-brand-blue font-bold text-xl mb-1">
+                  {model.title}
+                </h3>
+                <p class="text-brand-gray-medium leading-relaxed">
+                  {model.description}
+                </p>
+                <div class="w-full h-px bg-brand-gray-light mt-4"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

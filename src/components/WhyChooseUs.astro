@@ -1,0 +1,70 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const benefits = [
+  {
+    title: "Flexible Engagement",
+    description: "Scale your team up or down without long-term commitments.",
+    icon: "mdi:account-convert-outline"
+  },
+  {
+    title: "Cost Efficiency",
+    description: "Reduce hiring, infrastructure, and operational costs while maintaining quality.",
+    icon: "mdi:currency-usd-off"
+  },
+  {
+    title: "Access to Skilled Talent",
+    description: "Tap into a pool of qualified professionals across multiple disciplines.",
+    icon: "mdi:account-star-outline"
+  },
+  {
+    title: "Quality & Reliability",
+    description: "Consistent delivery backed by structured processes and oversight.",
+    icon: "mdi:check-decagram-outline"
+  },
+  {
+    title: "Global Delivery Capability",
+    description: "Support your operations across different geographies and time zones.",
+    icon: "mdi:earth"
+  }
+];
+---
+
+<section class="py-24 bg-brand-gray-light">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-4 text-center lg:text-left">
+        <h2 class="text-brand-blue text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+          Why Partner with <span class="text-brand-orange">DigiConsult?</span>
+        </h2>
+        <p class="text-brand-gray-medium mb-8 leading-relaxed">
+          We provide the scalability and expertise needed to drive your digital transformation, ensuring efficiency at every level of your operation.
+        </p>
+        <a href="/about" class="inline-block border-2 border-brand-blue text-brand-blue px-8 py-3 rounded-md font-bold uppercase text-sm hover:bg-brand-blue hover:text-white transition-all">
+          Learn More
+        </a>
+      </div>
+
+      <div class="lg:col-span-8">
+        <div class="grid sm:grid-cols-2 gap-6">
+          {benefits.map((benefit) => (
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-transparent hover:border-brand-orange/30 transition-all group">
+              <div class="w-12 h-12 bg-brand-gray-light rounded-lg flex items-center justify-center mb-6 text-brand-blue group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                <Icon name={benefit.icon} class="w-6 h-6" />
+              </div>
+              <h3 class="text-brand-blue font-bold text-lg mb-3">
+                {benefit.title}
+              </h3>
+              <p class="text-brand-gray-medium text-sm leading-relaxed">
+                {benefit.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

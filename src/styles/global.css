@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  /* - not an error actually*/
+  /* Primary Colors */
+  --color-brand-blue: #1f3a5f;
+  --color-brand-orange: #ca060b;
+
+  /* Secondary & Text Colors */
+  --color-brand-gray-light: #f4f6f8;
+  --color-brand-gray-medium: #6b7280;
+  --color-brand-navy: #0f2a44;
+
+  /* Service Category Accents */
+  --color-service-finance: #0000ff; /* Placeholder blue */
+  --color-service-hr: #008000; /* Placeholder green */
+  --color-service-it: #800080; /* Placeholder purple */
+  --color-service-legal: #ff0000; /* Placeholder red */
+}

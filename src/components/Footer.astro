@@ -1,0 +1,72 @@
+---
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+---
+
+<footer class="relative bg-brand-navy text-white overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/95 to-brand-orange/20 opacity-40 z-0"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      
+      <div>
+        <h2 class="text-3xl lg:text-4xl font-bold mb-6">Let's Build Your Team</h2>
+        <p class="text-brand-gray-light opacity-80 max-w-md mb-8 leading-relaxed">
+          Whether you're looking to reduce costs, improve efficiency, or scale rapidly, our augmented resourcing services provide the talent and flexibility you need.
+        </p>
+        <a 
+          href="/contact" 
+          class="inline-flex items-center gap-3 bg-brand-orange text-white px-8 py-4 rounded-md font-bold uppercase text-sm hover:scale-105 transition-transform shadow-lg"
+        >
+          Get In Touch Today <Icon name="mdi:chevron-right" class="w-5 h-5" />
+        </a>
+      </div>
+
+      <div class="grid gap-8 border-l border-white/10 pl-0 lg:pl-12">
+        
+        <div class="flex items-start gap-5 group">
+          <div class="w-12 h-12 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-colors">
+            <Icon name="mdi:map-marker" class="w-6 h-6" />
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-brand-orange font-bold mb-1">Visit Us</p>
+            <p class="text-sm opacity-90 leading-snug">22/1 husband road Mount Lavinia<br/>Colombo SriLanka</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-5 group">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+            <Icon name="mdi:email-outline" class="w-6 h-6" />
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-blue-400 font-bold mb-1">Contact Details</p>
+            <p class="text-sm opacity-90">+94 714 234 170</p>
+            <p class="text-sm opacity-90">digiconsultexperts@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-5 group">
+          <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white transition-colors">
+            <Icon name="mdi:shield-check-outline" class="w-6 h-6" />
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-green-400 font-bold mb-1">Company Info</p>
+            <p class="text-sm opacity-90">Registration No: PV 00261267</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3 transition-all">
+        <Image src={logo} alt="DigiConsult Logo" width={30} height={30} class="w-8 h-auto" />
+        <span class="font-bold text-lg tracking-tight">DigiConsult</span>
+      </div>
+      <p class="text-xs text-brand-gray-light opacity-50">
+        &copy; {new Date().getFullYear()} DigiConsult (PVT) LTD. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

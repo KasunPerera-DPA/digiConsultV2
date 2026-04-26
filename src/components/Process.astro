@@ -1,0 +1,84 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const steps = [
+  {
+    step: "1",
+    title: "Understand Your Requirements",
+    description: "We work closely with you to define the skills, experience, and capacity needed.",
+    icon: "mdi:clipboard-check-outline",
+    color: "text-blue-600",
+    bgColor: "bg-blue-600"
+  },
+  {
+    step: "2",
+    title: "Deploy the Right Talent",
+    description: "We provide vetted professionals aligned to your business needs and culture.",
+    icon: "mdi:account-group-outline",
+    color: "text-green-600",
+    bgColor: "bg-green-600"
+  },
+  {
+    step: "3",
+    title: "Seamless Integration",
+    description: "Our resources operate as an extension of your team.",
+    icon: "mdi:puzzle-outline",
+    color: "text-brand-orange",
+    bgColor: "bg-brand-orange"
+  },
+  {
+    step: "4",
+    title: "Scale as You Grow",
+    description: "Increase or decrease capacity based on workload and business demands.",
+    icon: "mdi:chart-line",
+    color: "text-purple-600",
+    bgColor: "bg-purple-600"
+  }
+];
+---
+
+<section class="py-24 bg-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')]"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <div class="text-center mb-20">
+      <h2 class="text-brand-blue text-3xl lg:text-4xl font-bold mb-2">
+        How Our Model Works
+      </h2>
+      <div class="w-16 h-1 bg-brand-orange mx-auto rounded-full"></div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-4 relative">
+      
+      {steps.map((item, index) => (
+        <div class="flex-1 flex flex-col items-center text-center relative group w-full">
+          
+          <div class="relative mb-8">
+            <div class="w-28 h-28 rounded-full border border-brand-gray-light bg-brand-gray-light flex items-center justify-center shadow-sm transition-all duration-300 group-hover:bg-white group-hover:border-brand-orange group-hover:shadow-md">
+              <Icon name={item.icon} class={`w-12 h-12 ${item.color}`} />
+            </div>
+            
+            <div class={`absolute -top-2 -left-2 w-8 h-8 ${item.bgColor} text-white rounded-full flex items-center justify-center font-bold text-sm shadow-sm`}>
+              {item.step}
+            </div>
+          </div>
+
+          {index < steps.length - 1 && (
+            <div class="hidden lg:block absolute top-14 -right-4 translate-x-1/2 text-brand-gray-medium/20">
+              <Icon name="mdi:chevron-right" class="w-8 h-8" />
+            </div>
+          )}
+
+          <h3 class="text-brand-blue font-bold text-lg mb-3">
+            {item.title}
+          </h3>
+          <p class="text-brand-gray-medium text-sm leading-relaxed max-w-[220px]">
+            {item.description}
+          </p>
+        </div>
+      ))}
+      
+    </div>
+  </div>
+</section>

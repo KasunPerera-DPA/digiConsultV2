@@ -1,0 +1,72 @@
+1. Brand Overview
+Brand Personality
+•	Professional 
+•	Scalable & Growth-focused 
+•	Trustworthy & Structured 
+•	Modern Corporate 
+Brand Voice
+•	Clear and confident 
+•	Solution-oriented 
+•	Minimal jargon, business-friendly 
+•	Emphasizes efficiency and scalability 
+________________________________________
+2. Logo Usage
+Primary Logo
+•	Full-color logo with icon + text (blue + orange) 
+•	Use on white or light backgrounds 
+Secondary Logo
+•	Monochrome (white) for dark backgrounds 
+Clear Space
+•	Maintain padding equal to height of logo icon 
+Do Not
+•	Stretch or distort 
+•	Change colors 
+•	Place on busy backgrounds 
+________________________________________
+3. Color Palette
+Primary Colors
+•	Deep Blue – #1F3A5F
+→ Trust, professionalism (headers, sections) 
+•	Bright Orange – #F05A28
+→ Call-to-actions, highlights 
+Secondary Colors
+•	Light Gray – #F4F6F8
+→ Backgrounds, cards 
+•	Medium Gray – #6B7280
+→ Body text 
+•	Dark Navy – #0F2A44
+→ Footer, emphasis sections 
+Accent Colors (Service Categories)
+•	Blue (Finance) 
+•	Green (HR) 
+•	Orange (Marketing) 
+•	Purple (IT) 
+•	Red (Legal) 
+👉 Use accent colors consistently per category.
+________________________________________
+4. Typography
+Headings
+•	Font: Sans-serif (e.g., Poppins / Inter / Montserrat) 
+•	Style: Bold, large, clean 
+•	Example: 
+o	H1: 40–48px 
+o	H2: 28–32px 
+Body Text
+•	Font: Same family (Regular / Medium) 
+•	Size: 14–16px 
+•	Line height: 1.5–1.7 
+Buttons
+•	Uppercase or Title Case 
+•	Medium weight 
+________________________________________
+5. UI Components
+Buttons
+•	Primary Button 
+o	Background: Orange 
+o	Text: White 
+o	Rounded corners 
+o	Example: “Get Started” 
+•	Secondary Button 
+o	Outline style (blue border) 
+o	Text: Blue
+

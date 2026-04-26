@@ -1,0 +1,60 @@
+---
+import ServiceCard from './ServiceCard.astro';
+
+const services = [
+  {
+    title: "Finance & Accounting",
+    description: "Boost your finance team with experts in global standards and compliance.",
+    iconName: "mdi:calculator",
+    accentClass: "bg-blue-600" // Service Blue 
+  },
+  {
+    title: "Human Resources",
+    description: "Enhance your HR operations with reliable support across the employee lifecycle.",
+    iconName: "mdi:account-tie",
+    accentClass: "bg-green-600" // Service Green 
+  },
+  {
+    title: "Marketing",
+    description: "Access creative and performance-driven talent to support your growth initiatives.",
+    iconName: "mdi:bullhorn",
+    accentClass: "bg-brand-orange" // Service Orange 
+  },
+  {
+    title: "Information Technology",
+    description: "Build and scale your technology capabilities with skilled IT professionals.",
+    iconName: "mdi:code-tags",
+    accentClass: "bg-purple-600" // Service Purple 
+  },
+  {
+    title: "Legal Process Outsourcing (LPO)",
+    description: "Streamline legal operations with structured and reliable support.",
+    iconName: "mdi:scale-balance",
+    accentClass: "bg-red-600" // Service Red 
+  }
+];
+---
+
+<section class="bg-brand-gray-light py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold text-brand-blue mb-4">
+        Our Core Service Areas
+      </h2>
+      <div class="w-16 h-1 bg-brand-orange mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      {services.map((service) => (
+        <ServiceCard 
+          title={service.title}
+          description={service.description}
+          iconName={service.iconName}
+          accentClass={service.accentClass}
+        />
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,26 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  title: string;
+  description: string;
+  iconName: string;
+  accentClass: string; // Tailored color for each category
+}
+
+const { title, description, iconName, accentClass } = Astro.props;
+---
+
+<div class={`bg-white border border-brand-gray-light rounded-xl p-8 text-center transition-all hover:shadow-xl group`}>
+  <div class={`w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6 text-white ${accentClass}`}>
+    <Icon name={iconName} class="w-8 h-8" />
+  </div>
+
+  <h3 class={`text-xl font-bold mb-4 ${accentClass.replace('bg-', 'text-')}`}>
+    {title}
+  </h3>
+
+  <p class="text-brand-gray-medium text-sm leading-relaxed">
+    {description}
+  </p>
+</div>
