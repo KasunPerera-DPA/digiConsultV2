@@ -1,0 +1,128 @@
+---
+import { Icon } from 'astro-icon/components';
+const recruitmentSteps = [
+  {
+    step: "01",
+    title: "Client Consultation",
+    desc: "Understanding your specific business goals and scaling needs.",
+    icon: "mdi:chat-processing-outline"
+  },
+  {
+    step: "02",
+    title: "Job Specification Analysis",
+    desc: "Defining the precise skills and experience required for the roles.",
+    icon: "mdi:file-find-outline"
+  },
+  {
+    step: "03",
+    title: "Shortlisting & Interviews",
+    desc: "Vetting top-tier Sri Lankan talent through rigorous evaluation.",
+    icon: "mdi:account-search-outline"
+  },
+  {
+    step: "04",
+    title: "Selection",
+    desc: "Choosing the perfect cultural and technical fit for your team.",
+    icon: "mdi:account-check-outline"
+  },
+  {
+    step: "05",
+    title: "Onboarding",
+    desc: "Seamlessly integrating your new resources into your workflow.",
+    icon: "mdi:rocket-launch-outline"
+  }
+];
+---
+
+  
+  <section class="py-20 bg-brand-navy text-white text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+    <div class="max-w-4xl mx-auto px-4 relative z-10">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-6">Partnering for Growth</h1>
+      <p class="text-xl opacity-90 leading-relaxed">
+        We are a team of seasoned professionals leveraging Sri Lanka’s exceptional talent pool to help global organizations scale, optimize, and thrive.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="p-10 bg-brand-gray-light rounded-2xl border-l-4 border-brand-blue">
+          <Icon name="mdi:eye-outline" class="w-12 h-12 text-brand-blue mb-6" />
+          <h2 class="text-2xl font-bold text-brand-blue mb-4 uppercase">Our Vision</h2>
+          <p class="text-brand-gray-medium leading-relaxed">
+            To empower organizations to achieve their goals through skilled and reliable augmented resourcing solutions.
+          </p>
+        </div>
+        <div class="p-10 bg-brand-gray-light rounded-2xl border-l-4 border-brand-orange">
+          <Icon name="mdi:bullseye-arrow" class="w-12 h-12 text-brand-orange mb-6" />
+          <h2 class="text-2xl font-bold text-brand-blue mb-4 uppercase">Our Mission</h2>
+          <p class="text-brand-gray-medium leading-relaxed">
+            To enable small and medium-scale businesses to efficiently manage and scale their operations by fulfilling their resourcing needs with qualified, skilled, and dedicated professionals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-brand-gray-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-brand-blue mb-4">More Than Just Outsourcing</h2>
+        <div class="w-16 h-1 bg-brand-orange mx-auto"></div>
+      </div>
+      
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-bold text-brand-blue mb-4 italic">Build-Operate-Transfer</h3>
+          <p class="text-sm text-brand-gray-medium">
+            We undertake BOT projects for clients seeking complete operational ownership over time, ensuring a smooth transition of management.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-bold text-brand-blue mb-4 italic">Direct Hire Flexibility</h3>
+          <p class="text-sm text-brand-gray-medium">
+            We facilitate a transparent transfer process if you wish to directly hire any of our resources after an agreed engagement period.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-bold text-brand-blue mb-4 italic">Full Compliance</h3>
+          <p class="text-sm text-brand-gray-medium">
+            We strictly adhere to all Sri Lankan laws and regulatory requirements, ensuring peace of mind for both clients and employees.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section><section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-brand-blue mb-4 uppercase">Our Recruitment Process</h2>
+      <p class="text-brand-gray-medium max-w-2xl mx-auto">
+        A transparent and rigorous 5-step approach to ensuring you get the best dedicated professionals.
+      </p>
+    </div>
+
+    <div class="relative">
+      <div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-brand-gray-light -translate-y-1/2"></div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative z-10">
+        {recruitmentSteps.map((item) => (
+          <div class="bg-white border border-brand-gray-light p-6 rounded-xl text-center group hover:border-brand-orange transition-colors">
+            <div class="w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold group-hover:bg-brand-orange">
+              {item.step}
+            </div>
+            <h3 class="text-brand-blue font-bold mb-2 text-sm uppercase">{item.title}</h3>
+            <p class="text-xs text-brand-gray-medium leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <div class="mt-16 text-center">
+      <p class="text-sm italic text-brand-gray-medium">
+        All engagements commence with clearly defined and transparent terms and conditions, discussed upfront.
+      </p>
+    </div>
+  </div>
+</section>

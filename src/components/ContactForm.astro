@@ -1,0 +1,98 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+  <section class="py-20 bg-brand-navy text-white text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+    <div class="max-w-4xl mx-auto px-4 relative z-10">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-6">Ready to build a high-performing team?</h1>
+      <p class="text-xl opacity-90 leading-relaxed">
+        Get in touch today to discuss your requirements and how our flexible models can support your growth. We look forward to partnering with you to achieve your business goals.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16">
+        
+        <div>
+          <h1 class="text-4xl font-bold text-brand-blue mb-6">Let’s Discuss Your Needs</h1>
+
+          <div class="space-y-8">
+            <div class="flex gap-6">
+              <div class="w-12 h-12 bg-brand-gray-light rounded-full flex items-center justify-center text-brand-blue flex-shrink-0">
+                <Icon name="mdi:map-marker" class="w-6 h-6" />
+              </div>
+              <div>
+                <h3 class="font-bold text-brand-blue uppercase text-xs tracking-widest mb-1">Our Office</h3>
+                <p class="text-brand-gray-medium text-sm">22/1 Huludagoda road, Mount Lavinia,<br/>Colombo, Sri Lanka</p>
+              </div>
+            </div>
+
+            <div class="flex gap-6">
+              <div class="w-12 h-12 bg-brand-gray-light rounded-full flex items-center justify-center text-brand-blue flex-shrink-0">
+                <Icon name="mdi:email-open-outline" class="w-6 h-6" />
+              </div>
+              <div>
+                <h3 class="font-bold text-brand-blue uppercase text-xs tracking-widest mb-1">Direct Contact</h3>
+                <p class="text-brand-gray-medium text-sm">+94 714 234 170</p>
+                <p class="text-brand-gray-medium text-sm">digiconsultexperts@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="flex gap-6">
+              <div class="w-12 h-12 bg-brand-gray-light rounded-full flex items-center justify-center text-brand-blue flex-shrink-0">
+                <Icon name="mdi:shield-check-outline" class="w-6 h-6" />
+              </div>
+              <div>
+                <h3 class="font-bold text-brand-blue uppercase text-xs tracking-widest mb-1">Company Info</h3>
+                <p class="text-brand-gray-medium text-sm">Registration No: PV 00261267</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-brand-gray-light p-8 lg:p-12 rounded-3xl shadow-sm">
+          <form action="#" method="POST" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-bold text-brand-blue uppercase mb-2">Your Name</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-all" placeholder="John Doe" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-brand-blue uppercase mb-2">Email Address</label>
+                <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-all" placeholder="john@company.com" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-brand-blue uppercase mb-2">Service of Interest</label>
+              <select name="service" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-orange outline-none transition-all text-brand-gray-medium bg-white">
+                <option>Finance & Accounting</option>
+                <option>Information Technology & AI</option>
+                <option>Human Resources</option>
+                <option>Legal Process Outsourcing</option>
+                <option>Marketing</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-brand-blue uppercase mb-2">How can we help?</label>
+              <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-all" placeholder="Tell us about your requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-brand-blue text-white font-bold uppercase py-4 rounded-lg hover:bg-brand-navy transition-all shadow-lg flex items-center justify-center gap-2">
+              Send Message <Icon name="mdi:send" class="w-5 h-5" />
+            </button>
+
+            <p class="text-[10px] text-center text-brand-gray-medium italic">
+              All inquiries are handled with complete confidentiality and compliance with data protection standards.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  </section>

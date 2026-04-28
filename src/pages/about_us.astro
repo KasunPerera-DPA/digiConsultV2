@@ -3,10 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/global.css'   
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import Services from '../components/Services.astro';
-import Process from '../components/Process.astro';
-import WhyChooseUs from '../components/WhyChooseUs.astro';
-import Engagement from '../components/Engagement.astro';
+import AboutUsData from '../components/AboutUs.astro';
+import Specializations from '../components/Specializations.astro';
 import Footer from '../components/Footer.astro';
 
 
@@ -26,12 +24,10 @@ const services = [
 ];
 ---
 
-<Layout title="DigiConsult" description="Learn about DigiConsult's mission to empower organizations through skilled augmented resourcing.">
+<Layout title="About Us | DigiConsult" description="Learn about DigiConsult's mission to empower organizations through skilled augmented resourcing.">
 	<Navbar />
-	<Hero />
-	<Services />
-	<Process />
-	<WhyChooseUs />
-	<Engagement />
+	<!-- <Hero /> -->
+    <AboutUsData />
+    <Specializations />
 	<Footer />
 </Layout>

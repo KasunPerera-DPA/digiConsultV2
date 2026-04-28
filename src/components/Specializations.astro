@@ -1,0 +1,72 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const industries = [
+  { name: "Finance", icon: "mdi:finance" },
+  { name: "Human Resources", icon: "mdi:account-group" },
+  { name: "IT & AI", icon: "mdi:robot-industrial" },
+  { name: "Marketing", icon: "mdi:bullhorn-variant" },
+  { name: "Legal Process Outsourcing", icon: "mdi:scale-balance" },
+  { name: "Research", icon: "mdi:database-search" }
+];
+
+const roles = [
+  { 
+    category: "Finance & Accounting", 
+    items: ["Internal & External Audit", "Bookkeeping", "Tax Accounting", "Payroll Specialists", "Data Entry"] 
+  },
+  { 
+    category: "Information Technology", 
+    items: ["Software Engineers", "QA Engineers", "AI Augmentation", "Tool Integration", "End-to-End Delivery"] 
+  },
+  { 
+    category: "Human Resources", 
+    items: ["Payroll Processing", "Benefits Administration", "Recruitment & Staffing", "HR Consultancy"] 
+  }
+];
+---
+
+<section class="py-24 bg-brand-gray-light">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-brand-blue mb-4 uppercase">Industries We Serve</h2>
+      <div class="w-16 h-1 bg-brand-orange mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      {industries.map((industry) => (
+        <div class="bg-white p-6 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow group">
+          <Icon name={industry.icon} class="w-10 h-10 mx-auto mb-4 text-brand-blue group-hover:text-brand-orange transition-colors" />
+          <p class="text-xs font-bold text-brand-blue uppercase tracking-tighter">{industry.name}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-brand-blue mb-2">Roles We Support</h2>
+      <p class="text-brand-gray-medium">Providing qualified, talented, and dedicated professionals across multiple functions.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-12">
+      {roles.map((roleGroup) => (
+        <div class="space-y-6">
+          <h3 class="text-lg font-bold text-brand-blue border-b-2 border-brand-orange pb-2 inline-block">
+            {roleGroup.category}
+          </h3>
+          <ul class="space-y-3">
+            {roleGroup.items.map((item) => (
+              <li class="flex items-center gap-3 text-sm text-brand-gray-medium">
+                <Icon name="mdi:chevron-right" class="w-4 h-4 text-brand-orange" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

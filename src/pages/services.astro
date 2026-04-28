@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css'   
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import ServicesHero from '../components/ServicesHero.astro';
+import ServicesCTA from '../components/ServicesCTA.astro';
+import ServicesDetail from '../components/ServicesDetail.astro';
+import MarketingAndLPO from '../components/MarketingAndLPO.astro';  
+import Footer from '../components/Footer.astro'; 
+---
+
+<Layout title="About Us | DigiConsult" description="Learn about DigiConsult's mission to empower organizations through skilled augmented resourcing.">
+	<Navbar />
+	<!-- <Hero /> -->
+    <ServicesHero />
+	<ServicesDetail />
+    <MarketingAndLPO />
+	<ServicesCTA />
+	<Footer />
+</Layout>

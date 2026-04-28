@@ -1,0 +1,111 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const financeServices = [
+  { title: "Accounting & Reporting", items: ["Bookkeeping Services", "Financial Reporting", "Data Entry & Admin Support"] },
+  { title: "Audit & Compliance", items: ["Internal & External Audit Support", "Tax Accounting", "Regulatory Compliance"] },
+  { title: "Payroll Management", items: ["Payroll Specialists", "Disbursement Support"] }
+];
+
+const techServices = [
+  { title: "Software Engineering", items: ["Full-stack Development", "QA & Testing Engineers", "End-to-End Project Delivery"] },
+  { title: "AI Augmentation", items: ["AI Tool Consultation", "Development & Integration", "AI-Driven Process Automation"] },
+  { title: "UI/UX Design", items: ["Modern Interface Design", "User Experience Optimization"] }
+];
+
+const hrServices = [
+  { title: "Talent Acquisition", items: ["Recruitment & Staffing", "Executive Search"] },
+  { title: "Operations", items: ["Payroll Processing", "Benefits Administration", "Workforce Insights"] },
+  { title: "Consultancy", items: ["HR Strategy", "HR Research", "Compliance Management"] }
+];
+---
+
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="mb-32">
+      <div class="flex items-center gap-4 mb-12">
+        <div class="w-16 h-16 rounded-2xl bg-blue-600/10 flex items-center justify-center text-blue-600">
+          <Icon name="mdi:finance" class="w-10 h-10" />
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold text-brand-blue">Finance & Accounting</h2>
+          <p class="text-brand-gray-medium">Strengthen your finance function with global standard expertise.</p>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {financeServices.map(group => (
+          <div class="bg-brand-gray-light p-8 rounded-2xl border-t-4 border-blue-600">
+            <h3 class="font-bold text-brand-blue mb-6 uppercase text-sm tracking-widest">{group.title}</h3>
+            <ul class="space-y-4">
+              {group.items.map(item => (
+                <li class="flex items-start gap-3 text-sm text-brand-gray-medium">
+                  <Icon name="mdi:check-circle" class="w-5 h-5 text-blue-600" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mb-32">
+      <div class="flex items-center gap-4 mb-12">
+        <div class="w-16 h-16 rounded-2xl bg-purple-600/10 flex items-center justify-center text-purple-600">
+          <Icon name="mdi:robot-industrial" class="w-10 h-10" />
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold text-brand-blue">IT & AI Augmentation</h2>
+          <p class="text-brand-gray-medium">Build and scale technology capabilities with skilled professionals.</p>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {techServices.map(group => (
+          <div class="bg-brand-gray-light p-8 rounded-2xl border-t-4 border-purple-600">
+            <h3 class="font-bold text-brand-blue mb-6 uppercase text-sm tracking-widest">{group.title}</h3>
+            <ul class="space-y-4">
+              {group.items.map(item => (
+                <li class="flex items-start gap-3 text-sm text-brand-gray-medium">
+                  <Icon name="mdi:chevron-right-circle" class="w-5 h-5 text-purple-600" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <div class="flex items-center gap-4 mb-12">
+        <div class="w-16 h-16 rounded-2xl bg-green-600/10 flex items-center justify-center text-green-600">
+          <Icon name="mdi:account-group" class="w-10 h-10" />
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold text-brand-blue">Human Resources</h2>
+          <p class="text-brand-gray-medium">Reliable support across the entire employee lifecycle.</p>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {hrServices.map(group => (
+          <div class="bg-brand-gray-light p-8 rounded-2xl border-t-4 border-green-600">
+            <h3 class="font-bold text-brand-blue mb-6 uppercase text-sm tracking-widest">{group.title}</h3>
+            <ul class="space-y-4">
+              {group.items.map(item => (
+                <li class="flex items-start gap-3 text-sm text-brand-gray-medium">
+                  <Icon name="mdi:shield-check" class="w-5 h-5 text-green-600" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
