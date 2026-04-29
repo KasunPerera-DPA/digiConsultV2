@@ -54,7 +54,7 @@ import { Icon } from 'astro-icon/components';
         </div>
 
         <div class="bg-brand-gray-light p-8 lg:p-12 rounded-3xl shadow-sm">
-          <form action="https://formspree.io/f/mlgzrdan" method="POST" class="space-y-6">
+          <form id="contact-form" action="https://formspree.io/f/mlgzrdan" method="POST" class="space-y-6">
             <input type="hidden" name="_next" value="https://digiconsult.solutions/" />
             <div class="grid md:grid-cols-2 gap-6">
               <div>
@@ -83,9 +83,13 @@ import { Icon } from 'astro-icon/components';
               <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-all" placeholder="Tell us about your requirements..."></textarea>
             </div>
 
-            <button type="submit" class="w-full bg-brand-blue text-white font-bold uppercase py-4 rounded-lg hover:bg-brand-navy transition-all shadow-lg flex items-center justify-center gap-2">
+            <button id="submit-btn" type="submit" class="w-full bg-brand-blue text-white font-bold uppercase py-4 rounded-lg hover:bg-brand-navy transition-all shadow-lg flex items-center justify-center gap-2">
               Send Message <Icon name="mdi:send" class="w-5 h-5" />
             </button>
+
+            <p id="form-status" class="hidden text-sm text-center font-bold text-brand-orange mt-4">
+    Sending... Please wait.
+  </p>
 
             <p class="text-[10px] text-center text-brand-gray-medium italic">
               All inquiries are handled with complete confidentiality and compliance with data protection standards.
@@ -97,3 +101,43 @@ import { Icon } from 'astro-icon/components';
     </div>
 
   </section>
+
+  <script is:inline>
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  const btn = document.getElementById("submit-btn");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Stop the default Formspree redirect
+    
+    btn.disabled = true;
+    status.classList.remove("hidden");
+    status.innerText = "Sending your message...";
+
+    const data = new FormData(form);
+    
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        status.innerText = "Success! Redirecting you now...";
+        // This is the manual redirect that bypasses Formspree's settings
+        setTimeout(() => {
+          window.location.href = "https://digiconsult.solutions/";
+        }, 1500);
+      } else {
+        status.innerText = "Oops! There was a problem. Please try again.";
+        btn.disabled = false;
+      }
+    } catch (error) {
+      status.innerText = "Error connecting to server.";
+      btn.disabled = false;
+    }
+  });
+</script>
