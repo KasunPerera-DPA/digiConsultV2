@@ -1,5 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from "astro:assets";
+import HeroBack from "../assets/HeroBack.jpg";
+import Shashini from "../assets/Shashini.png";
+import Dulip from "../assets/Dulip.png";
+
 const recruitmentSteps = [
   {
     step: "01",
@@ -32,6 +37,21 @@ const recruitmentSteps = [
     icon: "mdi:rocket-launch-outline"
   }
 ];
+
+const leaders = [
+  {
+    name: "Sashini",
+    role: "Director",
+    phone: "+94777726792",
+    color: "bg-brand-blue" // Deep Blue #1F3A5F,
+  },
+  {
+    name: "Dulip",
+    role: "Channel Development Partner",
+    phone: "+94777411811",
+    color: "bg-brand-navy" // Dark Navy #0F2A44
+  }
+];
 ---
 
   
@@ -45,17 +65,17 @@ const recruitmentSteps = [
     </div>
   </section>
 
-  <section class="py-24 bg-white">
+  <section class="py-24 bg-brand-gray-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12">
-        <div class="p-10 bg-brand-gray-light rounded-2xl border-l-4 border-brand-blue">
+        <div class="p-10 bg-white rounded-2xl border-l-4 border-brand-blue">
           <Icon name="mdi:eye-outline" class="w-12 h-12 text-brand-blue mb-6" />
           <h2 class="text-2xl font-bold text-brand-blue mb-4 uppercase">Our Vision</h2>
           <p class="text-brand-gray-medium leading-relaxed">
             To empower organizations to achieve their goals through skilled and reliable augmented resourcing solutions.
           </p>
         </div>
-        <div class="p-10 bg-brand-gray-light rounded-2xl border-l-4 border-brand-orange">
+        <div class="p-10 bg-white rounded-2xl border-l-4 border-brand-orange">
           <Icon name="mdi:bullseye-arrow" class="w-12 h-12 text-brand-orange mb-6" />
           <h2 class="text-2xl font-bold text-brand-blue mb-4 uppercase">Our Mission</h2>
           <p class="text-brand-gray-medium leading-relaxed">
@@ -65,6 +85,46 @@ const recruitmentSteps = [
       </div>
     </div>
   </section>
+
+  <section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Our Leadership Team</h2>
+      <p class="text-brand-gray-medium max-w-2xl mx-auto">
+        Guided by industry veterans committed to driving efficiency and global scalability for our partners.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-24 max-w-3xl mx-auto">
+      {leaders.map((leader) => (
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-brand-gray-light">
+          {/* Image Placeholder */}
+          
+          <Image
+            src={leader.name === "Sashini" ? Shashini : Dulip}
+            alt="Hero Background"
+            class="h-auto w-full object-cover object-right opacity-90"
+          />
+          
+          <div class="p-8 text-center">
+            <h3 class="text-2xl font-bold text-brand-blue mb-1">{leader.name}</h3>
+            <p class="text-brand-orange font-semibold uppercase text-xs tracking-widest mb-6">
+              {leader.role}
+            </p>
+            
+            <a 
+              href={`tel:${leader.phone.replace(/\s+/g, '')}`} 
+              class="inline-flex items-center gap-2 text-brand-gray-medium hover:text-brand-blue transition-colors font-medium"
+            >
+              <Icon name="mdi:phone" class="w-5 h-5 text-brand-orange" />
+              {leader.phone}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
   <section class="py-24 bg-brand-gray-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
