@@ -42,7 +42,7 @@ const leaders = [
   {
     name: "Sashini",
     role: "Director",
-    phone: "+94777726792",
+    phone: "+94714234170",
     color: "bg-brand-blue" // Deep Blue #1F3A5F,
   },
   {
@@ -107,19 +107,25 @@ const leaders = [
           />
           
           <div class="p-8 text-center">
-            <h3 class="text-2xl font-bold text-brand-blue mb-1">{leader.name}</h3>
-            <p class="text-brand-orange font-semibold uppercase text-xs tracking-widest mb-6">
-              {leader.role}
-            </p>
-            
-            <a 
-              href={`tel:${leader.phone.replace(/\s+/g, '')}`} 
-              class="inline-flex items-center gap-2 text-brand-gray-medium hover:text-brand-blue transition-colors font-medium"
-            >
-              <Icon name="mdi:phone" class="w-5 h-5 text-brand-orange" />
-              {leader.phone}
-            </a>
-          </div>
+  <h3 class="text-2xl font-bold text-brand-blue mb-1">{leader.name}</h3>
+  <p class="text-brand-orange font-semibold uppercase text-xs tracking-widest mb-6">
+    {leader.role}
+  </p>
+  
+  <a 
+    href={`https://wa.me/${leader.phone.replace(/\D/g, '')}`} 
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-2 text-brand-gray-medium hover:text-brand-blue transition-colors font-medium"
+  >
+    <Icon 
+      name="mdi:whatsapp" 
+      class="w-5 h-5" 
+      style="color: #25D366;" 
+    />
+    {leader.phone}
+  </a>
+</div>
         </div>
       ))}
     </div>
