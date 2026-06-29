@@ -31,7 +31,14 @@ const services = [
     description: "Streamline legal operations with structured and reliable support.",
     iconName: "mdi:scale-balance",
     accentClass: "bg-red-600" // Service Red 
+  },
+  {
+    title: "Executive Administrative Support Services",
+    description: "We provide Experienced Executive Support Professionals for Your Business.",
+    iconName: "mdi:briefcase-account",
+    accentClass: "bg-teal-600"
   }
+
 ];
 ---
 
@@ -45,7 +52,7 @@ const services = [
       <div class="w-16 h-1 bg-brand-orange mx-auto rounded-full"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
       {services.map((service) => (
         <ServiceCard 
           title={service.title}
