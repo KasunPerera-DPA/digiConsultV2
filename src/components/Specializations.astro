@@ -7,7 +7,8 @@ const industries = [
   { name: "IT & AI", icon: "mdi:robot-industrial" },
   { name: "Marketing", icon: "mdi:bullhorn-variant" },
   { name: "Legal Process Outsourcing", icon: "mdi:scale-balance" },
-  { name: "Research", icon: "mdi:database-search" }
+  { name: "Research", icon: "mdi:database-search" },
+  { name: "Health Care", icon: "mdi:hospital-building" }
 ];
 
 const roles = [
@@ -33,7 +34,7 @@ const roles = [
       <div class="w-16 h-1 bg-brand-orange mx-auto rounded-full"></div>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
       {industries.map((industry) => (
         <div class="bg-white p-6 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow group">
           <Icon name={industry.icon} class="w-10 h-10 mx-auto mb-4 text-brand-blue group-hover:text-brand-orange transition-colors" />

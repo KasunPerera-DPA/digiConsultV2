@@ -37,6 +37,12 @@ const services = [
     description: "We provide Experienced Executive Support Professionals for Your Business.",
     iconName: "mdi:briefcase-account",
     accentClass: "bg-teal-600"
+  },
+  {
+    title: "Healthcare Services",
+    description: "We support the healthcare revenue cycle operations in a fast-paced, client-focused environment.",
+    iconName: "mdi:hospital-building",
+    accentClass: "bg-emerald-600" // Service Healthcare Emerald
   }
 
 ];
@@ -52,7 +58,7 @@ const services = [
       <div class="w-16 h-1 bg-brand-orange mx-auto rounded-full"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6">
       {services.map((service) => (
         <ServiceCard 
           title={service.title}

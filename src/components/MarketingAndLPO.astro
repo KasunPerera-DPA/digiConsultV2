@@ -60,6 +60,20 @@ const lpoServices = [
     ]
   }
 ];
+
+const HealthcareServices = [
+  {
+    title: "Healthcare Support",
+    items: [
+      "Revenue Cycle Management (RCM)",
+      "Medical Coding",
+      "Medical Scribing",
+      "Patient Access Services",
+      "Call Center & Patient Support",
+      "Healthcare Administration"
+    ]
+  }
+]; 
 ---
 
 <section class="py-24 bg-white">
@@ -205,7 +219,7 @@ const lpoServices = [
     </div>
 
     <!-- Compliance Notice -->
-    <div class="mt-20 p-8 bg-blue-50 rounded-xl border border-blue-100 flex flex-col md:flex-row items-center gap-6">
+    <div class="mt-20 mb-32 p-8 bg-blue-50 rounded-xl border border-blue-100 flex flex-col md:flex-row items-center gap-6">
       <Icon
         name="mdi:shield-check"
         class="w-12 h-12 text-blue-600 flex-shrink-0"
@@ -217,7 +231,62 @@ const lpoServices = [
         ensuring complete transparency and peace of mind for both our clients
         and employees.
       </p>
+    </div>    
+
+    <!-- Health care -->
+    <div>
+      <div class="flex items-center gap-4 mb-12">
+        <div class="w-16 h-16 rounded-2xl bg-slate-700/10 flex items-center justify-center text-slate-700">
+          <Icon name="mdi:medical-bag" class="w-10 h-10" />
+        </div>
+
+        <div>
+          <h2 class="text-3xl font-bold text-brand-blue">
+            Health Care Services
+          </h2>
+          <p class="text-brand-gray-medium">
+            Access experienced healthcare administration professionals.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {HealthcareServices.map(group => (
+          <div class="bg-white p-8 rounded-2xl border-t-4 border-slate-700 shadow-sm">
+            <h3 class="font-bold text-brand-blue mb-6 uppercase text-sm tracking-widest">
+              {group.title}
+            </h3>
+
+            <ul class="space-y-4">
+              {group.items.map(item => (
+                <li class="flex items-start gap-3 text-sm text-brand-gray-medium">
+                  <Icon
+                    name="mdi:file-certificate-outline"
+                    class="w-5 h-5 text-slate-700 flex-shrink-0"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </div>
+
+    <!-- Compliance Notice -->
+    <div class="mt-20 p-8 bg-blue-50 rounded-xl border border-blue-100 flex flex-col md:flex-row items-center gap-6">
+      <Icon
+        name="mdi:heart-pulse"
+        class="w-12 h-12 text-blue-600 flex-shrink-0"
+      />
+
+      <p class="text-sm text-blue-900 leading-relaxed">
+        <strong>Healthcare revenue cycle operations in a fast-paced, client-focused environment:</strong>
+        We provide highly skilled healthcare administrative professionals who seamlessly support overseas healthcare providers.
+      </p>
+    </div>  
+
+    
 
   </div>
 </section>
