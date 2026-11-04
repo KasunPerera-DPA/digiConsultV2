@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import HeroBack from "../assets/HeroBack.jpg";
 import Shashini from "../assets/Shashini.png";
 import Dulip from "../assets/Dulip.png";
+import Asiri from "../assets/Asiri.png";
 
 const recruitmentSteps = [
   {
@@ -50,6 +51,11 @@ const leaders = [
     role: "Channel Development Partner",
     phone: "+94777411811",
     color: "bg-brand-navy" // Dark Navy #0F2A44
+  },{
+    name: "Asiri",
+    role: "Shareholder",
+    phone: "",
+    color: "bg-brand-blue" // Deep Blue #1F3A5F,
   }
 ];
 ---
@@ -95,37 +101,47 @@ const leaders = [
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-24 max-w-3xl mx-auto">
+    <!-- Updated grid to 3 columns and expanded max width to fit 3 items -->
+    <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
       {leaders.map((leader) => (
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-brand-gray-light">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-brand-gray-light flex flex-col">
           {/* Image Placeholder */}
-          
           <Image
-            src={leader.name === "Sashini" ? Shashini : Dulip}
-            alt="Hero Background"
+            src={
+              leader.name === "Sashini" 
+                ? Shashini 
+                : leader.name === "Dulip" 
+                ? Dulip 
+                : Asiri
+            }
+            alt={leader.name}
             class="h-auto w-full object-cover object-right opacity-90"
           />
           
-          <div class="p-8 text-center">
-  <h3 class="text-2xl font-bold text-brand-blue mb-1">{leader.name}</h3>
-  <p class="text-brand-orange font-semibold uppercase text-xs tracking-widest mb-6">
-    {leader.role}
-  </p>
-  
-  <a 
-    href={`https://wa.me/${leader.phone.replace(/\D/g, '')}`} 
-    target="_blank"
-    rel="noopener noreferrer"
-    class="inline-flex items-center gap-2 text-brand-gray-medium hover:text-brand-blue transition-colors font-medium"
-  >
-    <Icon 
-      name="mdi:whatsapp" 
-      class="w-5 h-5" 
-      style="color: #25D366;" 
-    />
-    {leader.phone}
-  </a>
-</div>
+          <div class="p-8 text-center flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-2xl font-bold text-brand-blue mb-1">{leader.name}</h3>
+              <p class="text-brand-orange font-semibold uppercase text-xs tracking-widest mb-6">
+                {leader.role}
+              </p>
+            </div>
+            
+            {leader.phone && (
+              <a 
+                href={`https://wa.me/${leader.phone.replace(/\D/g, '')}`} 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 text-brand-gray-medium hover:text-brand-blue transition-colors font-medium mt-auto"
+              >
+                <Icon 
+                  name="mdi:whatsapp" 
+                  class="w-5 h-5" 
+                  style="color: #25D366;" 
+                />
+                {leader.phone}
+              </a>
+            )}
+          </div>
         </div>
       ))}
     </div>
