@@ -44,55 +44,56 @@ const leaders = [
     name: "Sashini",
     role: "Director",
     phone: "+94714234170",
-    color: "bg-brand-blue" // Deep Blue #1F3A5F,
+    color: "bg-brand-blue", // Deep Blue #1F3A5F,
+    linkedin: ""
   },
   {
     name: "Dulip",
     role: "Channel Development Partner",
-    phone: "+94777411811",
-    color: "bg-brand-navy" // Dark Navy #0F2A44
-  },{
+    color: "bg-brand-navy", // Dark Navy #0F2A44
+    linkedin: "https://www.linkedin.com/in/dulip-soysa-1623541bb/"
+  },
+  {
     name: "Asiri",
     role: "Shareholder",
-    phone: "",
-    color: "bg-brand-blue" // Deep Blue #1F3A5F,
+    color: "bg-brand-blue", // Deep Blue #1F3A5F,
+    linkedin: "https://www.linkedin.com/in/asiri-karunaratne-financial-director-cfo/"
   }
 ];
 ---
 
-  
-  <section class="py-20 bg-brand-navy text-white text-center relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-    <div class="max-w-4xl mx-auto px-4 relative z-10">
-      <h1 class="text-4xl lg:text-5xl font-bold mb-6">Partnering for Growth</h1>
-      <p class="text-xl opacity-90 leading-relaxed">
-        We are a team of seasoned professionals leveraging Sri Lanka’s exceptional talent pool to help global organizations scale, optimize, and thrive.
-      </p>
-    </div>
-  </section>
+<section class="py-20 bg-brand-navy text-white text-center relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+  <div class="max-w-4xl mx-auto px-4 relative z-10">
+    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Partnering for Growth</h1>
+    <p class="text-xl opacity-90 leading-relaxed">
+      We are a team of seasoned professionals leveraging Sri Lanka’s exceptional talent pool to help global organizations scale, optimize, and thrive.
+    </p>
+  </div>
+</section>
 
-  <section class="py-24 bg-brand-gray-light">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12">
-        <div class="p-10 bg-white rounded-2xl border-l-4 border-brand-blue">
-          <Icon name="mdi:eye-outline" class="w-12 h-12 text-brand-blue mb-6" />
-          <h2 class="text-2xl font-bold text-brand-blue mb-4 uppercase">Our Vision</h2>
-          <p class="text-brand-gray-medium leading-relaxed">
-            To empower organizations to achieve their goals through skilled and reliable augmented resourcing solutions.
-          </p>
-        </div>
-        <div class="p-10 bg-white rounded-2xl border-l-4 border-brand-orange">
-          <Icon name="mdi:bullseye-arrow" class="w-12 h-12 text-brand-orange mb-6" />
-          <h2 class="text-2xl font-bold text-brand-blue mb-4 uppercase">Our Mission</h2>
-          <p class="text-brand-gray-medium leading-relaxed">
-            To enable small and medium-scale businesses to efficiently manage and scale their operations by fulfilling their resourcing needs with qualified, skilled, and dedicated professionals.
-          </p>
-        </div>
+<section class="py-24 bg-brand-gray-light">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="p-10 bg-white rounded-2xl border-l-4 border-brand-blue">
+        <Icon name="mdi:eye-outline" class="w-12 h-12 text-brand-blue mb-6" />
+        <h2 class="text-2xl font-bold text-brand-blue mb-4 uppercase">Our Vision</h2>
+        <p class="text-brand-gray-medium leading-relaxed">
+          To empower organizations to achieve their goals through skilled and reliable augmented resourcing solutions.
+        </p>
+      </div>
+      <div class="p-10 bg-white rounded-2xl border-l-4 border-brand-orange">
+        <Icon name="mdi:bullseye-arrow" class="w-12 h-12 text-brand-orange mb-6" />
+        <h2 class="text-2xl font-bold text-brand-blue mb-4 uppercase">Our Mission</h2>
+        <p class="text-brand-gray-medium leading-relaxed">
+          To enable small and medium-scale businesses to efficiently manage and scale their operations by fulfilling their resourcing needs with qualified, skilled, and dedicated professionals.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="py-24 bg-white">
+<section class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Our Leadership Team</h2>
@@ -101,11 +102,9 @@ const leaders = [
       </p>
     </div>
 
-    <!-- Updated grid to 3 columns and expanded max width to fit 3 items -->
     <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
       {leaders.map((leader) => (
         <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-brand-gray-light flex flex-col">
-          {/* Image Placeholder */}
           <Image
             src={
               leader.name === "Sashini" 
@@ -126,7 +125,7 @@ const leaders = [
               </p>
             </div>
             
-            {leader.phone && (
+            {leader.phone ? (
               <a 
                 href={`https://wa.me/${leader.phone.replace(/\D/g, '')}`} 
                 target="_blank"
@@ -140,7 +139,20 @@ const leaders = [
                 />
                 {leader.phone}
               </a>
-            )}
+            ) : leader.linkedin ? (
+              <a 
+                href={leader.linkedin} 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 text-brand-gray-medium hover:text-brand-blue transition-colors font-medium mt-auto"
+              >
+                <Icon 
+                  name="mdi:linkedin" 
+                  class="w-5 h-5 text-[#0A66C2]" 
+                />
+                LinkedIn Profile
+              </a>
+            ) : null}
           </div>
         </div>
       ))}
@@ -148,35 +160,37 @@ const leaders = [
   </div>
 </section>
 
-  <section class="py-24 bg-brand-gray-light">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-brand-blue mb-4">More Than Just Outsourcing</h2>
-        <div class="w-16 h-1 bg-brand-orange mx-auto"></div>
+<section class="py-24 bg-brand-gray-light">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-brand-blue mb-4">More Than Just Outsourcing</h2>
+      <div class="w-16 h-1 bg-brand-orange mx-auto"></div>
+    </div>
+    
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+        <h3 class="text-xl font-bold text-brand-blue mb-4 italic">Build-Operate-Transfer</h3>
+        <p class="text-sm text-brand-gray-medium">
+          We undertake BOT projects for clients seeking complete operational ownership over time, ensuring a smooth transition of management.
+        </p>
       </div>
-      
-      <div class="grid lg:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-bold text-brand-blue mb-4 italic">Build-Operate-Transfer</h3>
-          <p class="text-sm text-brand-gray-medium">
-            We undertake BOT projects for clients seeking complete operational ownership over time, ensuring a smooth transition of management.
-          </p>
-        </div>
-        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-bold text-brand-blue mb-4 italic">Direct Hire Flexibility</h3>
-          <p class="text-sm text-brand-gray-medium">
-            We facilitate a transparent transfer process if you wish to directly hire any of our resources after an agreed engagement period.
-          </p>
-        </div>
-        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <h3 class="text-xl font-bold text-brand-blue mb-4 italic">Full Compliance</h3>
-          <p class="text-sm text-brand-gray-medium">
-            We strictly adhere to all Sri Lankan laws and regulatory requirements, ensuring peace of mind for both clients and employees.
-          </p>
-        </div>
+      <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+        <h3 class="text-xl font-bold text-brand-blue mb-4 italic">Direct Hire Flexibility</h3>
+        <p class="text-sm text-brand-gray-medium">
+          We facilitate a transparent transfer process if you wish to directly hire any of our resources after an agreed engagement period.
+        </p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+        <h3 class="text-xl font-bold text-brand-blue mb-4 italic">Full Compliance</h3>
+        <p class="text-sm text-brand-gray-medium">
+          We strictly adhere to all Sri Lankan laws and regulatory requirements, ensuring peace of mind for both clients and employees.
+        </p>
       </div>
     </div>
-  </section><section class="py-24 bg-white">
+  </div>
+</section>
+
+<section class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-3xl font-bold text-brand-blue mb-4 uppercase">Our Recruitment Process</h2>
